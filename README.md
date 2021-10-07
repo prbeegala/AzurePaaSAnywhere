@@ -148,7 +148,7 @@ In Azure Portal, create a web app
 ![CreateWebApp2](.images/CreateWebAppinCustomLocation2.png)
 ![CreateWebApp2](.images/webapprunning.png)
 
-## Appendix : Open the ports in firewall router
+## Open the ports in firewall router
 
 PORT FORWARDING
 The screen shot is from my router settings where I did the port forwarding. Your routers port forwarding page might look different.
