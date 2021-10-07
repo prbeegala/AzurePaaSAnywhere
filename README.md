@@ -2,13 +2,15 @@
 Azure now has released the capability to run Azure Application Services to run anywhere which are Arc enabled. In this repo you will find the detailed steps to run Azure PaaS services, especially a web app in a Docker Desktop. 
 
 Broadly the steps are as follows:
-
+- [Azure Application Services](https://azure.microsoft.com/en-gb/updates/public-preview-run-app-service-on-kubernetes-or-anywhere-with-azure-arc/)
    - [Enable K8S on your laptop Desktop](#enablek8sonyourlaptop)
    - [Connect your laptop/desktop to Azure using Azure Arc](#connectusingazurearc)
    - [Install/push the App Service Extension to your Docker Desktop cluster](#pushextension)
    - [Create a Custom Location](#createcustomlocation)
    - [Create a WebApp and Deploy to Docker Desktop cluster](#createwebapp)
    - [Optional - Open the ports in firewall router](#openfirewallrouter)
+
+
 
 # STEPS TO RUN AZURE APPLICATION SERVICES ON YOUR LAPTOP OR OTHER HOME DEVICES
 
