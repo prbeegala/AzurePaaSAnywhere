@@ -50,4 +50,97 @@ Defaulting on the Monitoring and Tags tabs will take you to the screen shown her
 
 ![InstallAppServiceExtenstion5](.images/InstallAppServiceExtensions5.png)
 
+Now that you have pushed the extension successfully to your docker desktop cluster, check all the pods, namespaces and services.
+
+![GetAllPods](.images/GetPodsAfterExtension.png)
+![GetAllPods2](.images/GetPodsAfterExtensionwithnamespace.png.png)
+
+Before you run custom location create, you need to do the following:
+As you see the highlighted envoy service, it doesn’t have an external-ip. You need to edit this service file to add the external ip (which is the same as what you found in whatismyip.com)
+Kubectl edit svc -n appservice-ns paas1506-k8se-envoy
+
+![ExternalIP](.images/EditSvcEditExternalIP.png)
+
+Now you can see the external ip as highlighted below:
+
+![ExternalIPSee](.images/SeetheExternalIP.png)
+
+# Persistent Volume and Persistent volume claim
+When you run get pods, you should see a build-service pod in pending state.
+
+![GetPodsPending](.images/UnboundPersistentVolumeClaim.png)
+
+If you describe pod on this one, it will show you why it is in pending state (unbound persistent volume claims)
+
+![GetPodsPendingDetail](.images/UnboundPersistentVolumeClaim_Detail.png)
+
+To get this POD out of pending state, we need to create a Persistent volume followed by claiming that storage using Persistent volume claim (PVC)
+#Create a Persistent volume – edit the highlight to match it with your name and namespace
+
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: paas1506-k8se-build-service
+  labels:
+    type: local
+spec:
+  storageClassName: default
+  capacity:
+    storage: 100Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data"
+EOF
+
+#Create a Persistent volume claim
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: paas1506-k8se-build-service
+  namespace: appservice-ns
+spec:
+  storageClassName: default
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Gi
+EOF
+
+![PVCApply](.images/kubectlapplypvs.png)
+
+Now that you have made a claim to Persistent volume, the pod which was pending should get back to running state.
+
+![PVCRunningState](.images/AfterPVCPodstoRunningState.png)
+
+You can now go ahead and finish the remainder of the scripts – which is to create a custom location and create a app service Kubernetes environment.
+
+![CustomeLocationCreate](.images/Customlocationcreatescript.png)
+
+When they are successful, you can go and see the following resources in the resource group
+
+![PortalCustomLocation](.images/CustomLocationinAzurePortal.png)
+
+To test this, we can go and create a AppService – like you normally do in the portal, and select region as whatever you created (mine was prakashlondon). This should deploy this node.js starter webapp to your docker desktop k8s cluster, which you can browse through.
+
+# Step 3 – Create webapp to deploy to Docker desktop cluster
+
+In Azure Portal, create a web app
+
+![CreateWebApp](.images/CreateWebAppinCustomLocation.png)
+![CreateWebApp2](.images/CreateWebAppinCustomLocation2.png)
+![CreateWebApp2](.images/webapprunning.png)
+
+# Appendix:
+
+PORT FORWARDING
+The screen shot is from my router settings where I did the port forwarding. Your routers port forwarding page might look different.
+
+![BTRouterSettings1](.images/BTFirewall1.png)
+![BTRouterSettings2](.images/BTFirewall2.png)
+![BTRouterSettings3](.images/BTFirewall3.png)
+
 
