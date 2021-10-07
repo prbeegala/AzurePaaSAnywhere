@@ -3,7 +3,7 @@ Azure now has released the capability to run Azure Application Services to run a
 
 Broadly the steps are as follows:
 - [Azure Application Services](https://azure.microsoft.com/en-gb/updates/public-preview-run-app-service-on-kubernetes-or-anywhere-with-azure-arc/)
-   - [Enable K8S on your laptop Desktop](#enablek8sonyourlaptop)
+   - [Enable K8S on your laptop/desktop](#enable-k8s-on-your-laptop/desktop)
    - [Connect your laptop/desktop to Azure using Azure Arc](#connectusingazurearc)
    - [Install/push the App Service Extension to your Docker Desktop cluster](#pushextension)
    - [Create a Custom Location](#createcustomlocation)
