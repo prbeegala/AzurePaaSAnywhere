@@ -77,6 +77,7 @@ If you describe pod on this one, it will show you why it is in pending state (un
 To get this POD out of pending state, we need to create a Persistent volume followed by claiming that storage using Persistent volume claim (PVC)
 #Create a Persistent volume – edit the highlight to match it with your name and namespace
 
+```
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: PersistentVolume
@@ -109,6 +110,7 @@ spec:
     requests:
       storage: 100Gi
 EOF
+```
 
 ![PVCApply](.images/kubectlapplypvs.png)
 
