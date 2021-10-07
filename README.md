@@ -8,7 +8,7 @@ Broadly the steps are as follows:
    - [Install the App Service Extension to your Docker Desktop cluster](#install-the-app-service-extension-to-your-docker-desktop-cluster)
    - [Create Custom Location](#create-custom-location)
    - [Create a WebApp and Deploy to Docker Desktop cluster](#create-a-webapp-and-deploy-to-docker-desktop-cluster)
-   - [Appendix : Open the ports in firewall router](#appendix-:-open-the-ports-in-firewall-router)
+   - [Open the ports in firewall router](#open-the-ports-in-firewall-router)
 
 
 
