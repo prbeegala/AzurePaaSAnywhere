@@ -1,5 +1,5 @@
-# Azure PaaS Anywhere 
-Now in preview, Azure App Service can run against Kubernetes clusters in AKS or anywhere with Azure Arc. With this, you no longer need to choose between the productivity of App Service and control of Kubernetes. You can now run Web Apps against a range of fully managed App Service plans or choose to deploy against Azure Kubernetes Service or your own Kubernetes clusters connected through Azure Arc that are running on-premises, at the edge, or in other clouds. For more details refer https://azure.microsoft.com/en-gb/blog/build-cloudnative-applications-that-run-anywhere/
+# Azure application services: Run your apps anywhere
+Now in preview, Azure Application Services can run on Kubernetes and anywhere across Azure, on-premises, AWS, and Google Cloud. Any Cloud Native Computing Foundation (CNCF)-conformant Kubernetes cluster connected through Azure Arc is now a supported deployment target for Azure application services. You can now run Web Apps against a range of fully managed App Service plans or choose to deploy against Azure Kubernetes Service or your own Kubernetes clusters connected through Azure Arc that are running on-premises, at the edge, or in other clouds. For more details refer https://azure.microsoft.com/en-gb/blog/build-cloudnative-applications-that-run-anywhere/
 
 In this repo you will find the detailed steps to run Azure web app in a Docker Desktop container.  
 
