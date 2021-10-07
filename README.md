@@ -36,7 +36,7 @@ You can explore the resource group arccluster1345 in the portal where you can se
 
 Now that your laptop cluster is connected, you can install an App Service extension as shown here:
 
-![InstallAppServiceExtenstion](.images/InstallAppServiceExtensions1.png)
+![InstallAppServiceExtenstion1](.images/InstallAppServiceExtensions.png)
 ![InstallAppServiceExtenstion2](.images/InstallAppServiceExtensions2.png)
 
 You have a field to enter your static ip as shown below. I don’t have any static IP’s (there are service providers who can set up and manage static ip’s dedicated for you, which are not free as far as I know).
