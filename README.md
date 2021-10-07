@@ -29,11 +29,8 @@ Now, using Windows terminal or Powershell if you can get to the correct cluster 
 I found this resource useful which takes you through how to connect your cluster to Azure Arc - Existing cluster | Azure Arc Jumpstart
 
 To connect this docker-desktop to Azure Arc, create a resource group (or use an existing one) and then the command to connect.
-```
-az group create -n arccluster1345 -l westeurope
-
-az connectedk8s connect --name arcpblaptop1506 --resource-group arccluster1506
-```
+`az group create -n arccluster1345 -l westeurope`
+`az connectedk8s connect --name arcpblaptop1506 --resource-group arccluster1506`
 
 ![ClusterConnectCommand](.images/ArcConnectDockerDesktop.png)
 
@@ -90,7 +87,7 @@ If you describe pod on this one, it will show you why it is in pending state (un
 To get this POD out of pending state, we need to create a Persistent volume followed by claiming that storage using Persistent volume claim (PVC)
 #Create a Persistent volume – edit the highlight to match it with your name and namespace
 
-```
+```yaml
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: PersistentVolume
