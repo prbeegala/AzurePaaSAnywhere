@@ -4,7 +4,7 @@ Azure now has released the capability to run Azure Application Services to run a
 Broadly the steps are as follows:
 - [Azure Application Services](https://azure.microsoft.com/en-gb/updates/public-preview-run-app-service-on-kubernetes-or-anywhere-with-azure-arc/)
    - [Enable K8S on your laptop](#enable-k8s-on-your-laptop)
-   - [Connect your laptop/desktop to Azure using Azure Arc](#connectusingazurearc)
+   - [Connect your laptop to Azure using Azure Arc](#connect-your-laptop-to-azure-using-azure-arc)
    - [Install/push the App Service Extension to your Docker Desktop cluster](#pushextension)
    - [Create a Custom Location](#createcustomlocation)
    - [Create a WebApp and Deploy to Docker Desktop cluster](#createwebapp)
@@ -23,6 +23,7 @@ Now, using Windows terminal or Powershell if you can get to the correct cluster 
 
 ![ClusterContext](.images/TerminalClusterContext.png)
 
+## Connect your laptop to Azure using Azure Arc
 I found this resource useful which takes you through how to connect your cluster to Azure Arc - Existing cluster | Azure Arc Jumpstart
 
 To connect this docker-desktop to Azure Arc, create a resource group (or use an existing one) and then the command to connect.
