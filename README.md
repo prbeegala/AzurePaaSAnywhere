@@ -13,7 +13,7 @@ Broadly the steps are as follows:
 
 
 
-## enable-k8s-on-your-laptop/desktop
+## Enable K8S on your laptop/desktop
 
 There are multiple ways on running Kubernetes locally on your laptop (miniKube, Kind etc), I have chosen the option of using Docker Desktop. If you have Docker desktop running, you can enable Kubernetes in the settings:
 
