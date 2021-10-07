@@ -5,10 +5,10 @@ Broadly the steps are as follows:
 - [Azure Application Services](https://azure.microsoft.com/en-gb/updates/public-preview-run-app-service-on-kubernetes-or-anywhere-with-azure-arc/)
    - [Enable K8S on your laptop](#enable-k8s-on-your-laptop)
    - [Connect your laptop to Azure using Azure Arc](#connect-your-laptop-to-azure-using-azure-arc)
-   - [Install/push the App Service Extension to your Docker Desktop cluster](#pushextension)
-   - [Create a Custom Location](#createcustomlocation)
-   - [Create a WebApp and Deploy to Docker Desktop cluster](#createwebapp)
-   - [Optional - Open the ports in firewall router](#openfirewallrouter)
+   - [Install the App Service Extension to your Docker Desktop cluster](#install-the-app-service-extension-to-your-docker-desktop-cluster)
+   - [Create Custom Location](#create-custom-location)
+   - [Create a WebApp and Deploy to Docker Desktop cluster](#create-a-webapp-and-deploy-to-docker-desktop-cluster)
+   - [Appendix : Open the ports in firewall router](#appendix-:-open-the-ports-in-firewall-router)
 
 
 
@@ -43,7 +43,7 @@ You can explore the resource group arccluster1345 in the portal where you can se
 
 ![AzureArcClusterPortal](.images/PortalExploreArc.png)
 
-# Step 2 – Install the App Service extension to your docker desktop cluster
+## Install the App Service Extension to your Docker Desktop cluster
 
 Now that your laptop cluster is connected, you can install an App Service extension as shown here:
 
@@ -129,6 +129,7 @@ Now that you have made a claim to Persistent volume, the pod which was pending s
 
 ![PVCRunningState](.images/AfterPVCPodstoRunningState.png)
 
+## Create Custom Location
 You can now go ahead and finish the remainder of the scripts – which is to create a custom location and create a app service Kubernetes environment.
 
 ![CustomeLocationCreate](.images/Customlocationcreatescript.png)
@@ -139,7 +140,7 @@ When they are successful, you can go and see the following resources in the reso
 
 To test this, we can go and create a AppService – like you normally do in the portal, and select region as whatever you created (mine was prakashlondon). This should deploy this node.js starter webapp to your docker desktop k8s cluster, which you can browse through.
 
-# Step 3 – Create webapp to deploy to Docker desktop cluster
+## Create a WebApp and Deploy to Docker Desktop cluster
 
 In Azure Portal, create a web app
 
@@ -147,7 +148,7 @@ In Azure Portal, create a web app
 ![CreateWebApp2](.images/CreateWebAppinCustomLocation2.png)
 ![CreateWebApp2](.images/webapprunning.png)
 
-# Appendix:
+## Appendix : Open the ports in firewall router
 
 PORT FORWARDING
 The screen shot is from my router settings where I did the port forwarding. Your routers port forwarding page might look different.
