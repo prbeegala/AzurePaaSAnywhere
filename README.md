@@ -65,7 +65,7 @@ Defaulting on the Monitoring and Tags tabs will take you to the screen shown her
 Now that you have pushed the extension successfully to your docker desktop cluster, check all the pods, namespaces and services.
 
 ![GetAllPods](.images/GetPodsAfterExtension.png)
-![GetAllPods2](.images/GetPodsAfterExtensionwithnamespace.png.png)
+![GetAllPods2](.images/GetPodsAfterExtensionwithnamespace.png)
 
 Before you run custom location create, you need to do the following:
 As you see the highlighted envoy service, it doesn’t have an external-ip. You need to edit this service file to add the external ip (which is the same as what you found in whatismyip.com)
